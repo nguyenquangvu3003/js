@@ -7,6 +7,7 @@ function sumarray(numbers) {
     return sum
 }
 // dung reduce nang cao
+//reduce ( accumulator (giá trị tích lũy qua từng vòng lặp), currentValue (phần tử hiện tại của mảng))
 function sumarrayreduce(numbers) {
     return numbers.reduce((total, num) => total + num, 0)
 }
