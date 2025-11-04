@@ -1,27 +1,39 @@
 const nums = [2, 4, 5, 1, 6, 3, 7];
-const sortArray = (nums) => {
-    for (let i = 0; i < nums.length - 1; i++) {
-    for (let u = 0; u < nums.length - 1 - i; u++) {
-        if (nums[u] > nums[u + 1] ) {
-            let tem = nums[u];
-            nums[u] = nums[u + 1];
-            nums[u + 1] = tem;
-        }
-         if (nums[u] < nums[u + 1] ) {
-            let tem = nums[u];
-            nums[u] = nums[u + 1];
-            nums[u + 1] = tem;
-        }
-        
-    }
-        
-    
-        
-    }
-    return nums;
+// const sortArray = (nums) => {
+//   for (let i = 0; i < nums.length - 1; i++) {
+//     for (let u = 0; u < nums.length - 1 - i; u++) {
+//       if (nums[u] > nums[u + 1] ) {
+//           let tem = nums[u];
+//           nums[u] = nums[u + 1];
+//           nums[u + 1] = tem;
+//       }
+//       if (nums[u] < nums[u + 1]) {
+//         let tem = nums[u];
+//         nums[u] = nums[u + 1];
+//         nums[u + 1] = tem;
+//       }
+//     }
+//   }
+//   return nums;
+// };
+// console.log(sortArray(nums));
+
+// const sortt = [...nums].sort((a,b) => a - b )
+// console.log(sortt);
+
+const sortByForeach = (nums) => {
+    let arr = [...nums];
+    arr.forEach(() => {
+        arr.forEach((num, i) => {
+            if (arr[i] > arr[i + 1]) {
+                let temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr [i + 1] = temp;
+            }
+        });
+    });
+    return arr;
+       
 }
-console.log(sortArray(nums));
+console.log(sortByForeach(nums));
 
-
-const sortt = [...nums].sort((a,b) => a - b )
-console.log(sortt);
